@@ -1,0 +1,27 @@
+:repo: disjoint-set-task
+
+# Disjoint Set
+
+image:https://travis-ci.org/piotrturski/{repo}.svg?branch=master["Build Status",
+link="https://travis-ci.org/piotrturski/{repo}"]
+
+# Overview
+
+Uses disjoint set. Used implementation has recursive `find`,
+which kind of sucks but I couldn't find any repo-available
+implementation with iterative `find`.
+
+Therefore I created a new link:https://github.com/jgrapht/jgrapht/pull/442[pull request] to fix that.
+
+# Complexity
+
+|===
+||Time | Space (iterative find)
+
+| constructor | O(n) | O(n)
+| connect, query | in practice^*^ O(1) amortized | O(1)
+
+|===
+
+^*^ real amortized complexity is O(α(n)) where α(n) is inverse Ackermann function.
+
